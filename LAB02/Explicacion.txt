@@ -1,0 +1,55 @@
+Datasets: hotel_bookings.csv
+
+Se busca predecir la tarifa promedio diaria (ADR) de reservas hoteleras usando técnicas de regresión lineal multivariable.
+Para ello, se seleccionaron como variables independientes (características) los siguientes datos de cada reserva:
+
+*** La variable (X)
+   adults: número de adultos por reserva.
+
+   children: número de niños por reserva.
+
+   babies: número de bebés por reserva.
+
+   stays_in_weekend_nights: número de noches de fin de semana.
+
+   stays_in_week_nights: número de noches entre semana.
+
+   booking_changes: cantidad de cambios realizados a la reserva.
+
+   reserved_room_type_num: tipo de habitación reservada, convertido a un valor numérico.
+
+   customer_type_num: tipo de cliente, convertido a un valor numérico.
+
+   market_segment_num: segmento de mercado del cliente, convertido a un valor numérico.
+
+*** 
+   La variable dependiente (y) es adr, es decir, la tarifa promedio diaria de la reserva.
+
+
+
+El objetivo es determinar los parámetros θ (theta) que mejor ajusten los datos para predecir ADR mediante:
+
+- Regresión lineal multivariable con descenso por gradiente:
+
+- Se normalizan las características para que tengan media 0 y desviación estándar 1.
+
+- Se inicializan los parámetros theta en cero y se actualizan iterativamente para minimizar la función de costo.
+
+- Se grafica la convergencia del costo para verificar que el modelo ha aprendido correctamente.
+
+- Regresión usando la ecuación de la normal:
+
+- Se calcula directamente theta resolviendo la ecuación cerrada sin necesidad de iteraciones, obteniendo los
+parámetros que minimizan el error cuadrático medio.
+
+
+Predicción y comparación:
+
+Una vez obtenidos los parámetros theta, se pueden hacer predicciones de ADR para reservas específicas ingresando los
+valores de sus características.
+
+Se pueden generar múltiples predicciones (por ejemplo, 100 aleatorias) y compararlas con los valores reales para
+evaluar el desempeño del modelo mediante gráficos.
+
+Se busca visualizar la relación entre los valores reales y los predichos, identificando posibles desviaciones o patrones.
+
