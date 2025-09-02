@@ -1,0 +1,31 @@
+El proceso se desarrolla en etapas controladas y trazables:
+
+ 1. Selección explícita de variables
+    Se eligen manualmente las columnas relevantes del dataset, evitando automatismos y manteniendo control total sobre los datos utilizados.
+
+ 2. Codificación categórica
+    Se transforman las variables de texto en valores numéricos mediante , permitiendo que el modelo procese la información sin ambigüedad.
+
+ 3. Creación de la variable multiclase
+    Se construye una nueva columna que representa combinaciones únicas entre  y , codificada como variable objetivo multiclase.
+
+ 4. Tratamiento de valores nulos
+    Se imputan los valores faltantes en  usando el promedio, asegurando consistencia sin alterar la distribución original.
+
+ 5. Separación de datos
+    Se divide el conjunto en entrenamiento (80 %) y prueba (20 %) de forma estratificada, manteniendo la proporción de clases.
+
+ 6. Normalización manual
+    Se aplica normalización estándar (media 0, desviación 1) sobre los datos, calculando  y  explícitamente para garantizar reproducibilidad.
+
+ 7. Agregado del término de sesgo
+    Se añade una columna de unos a los datos normalizados, permitiendo que el modelo aprenda un desplazamiento constante.
+
+ 8. Definición de funciones matemáticas
+    Se implementan manualmente la función sigmoidea () y la función de costo regularizada (), respetando la lógica tradicional.
+
+ 9. Entrenamiento multiclase con One-vs-All
+    Se entrena un clasificador binario por cada clase usando , sin modificar el modelo principal.
+
+ 10. Predicción y evaluación
+    Se realiza la predicción sobre el conjunto de prueba y se calcula la precisión global del modelo, interpretando los resultados en función de la complejidad del problema.
