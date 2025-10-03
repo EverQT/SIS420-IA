@@ -1,0 +1,54 @@
+PUNTO 1: Preparación y Exploración de Datos
+Esta fase inicial se enfoca en cargar el dataset de Parkinson y usar el clustering para entender su estructura interna (Aprendizaje No Supervisado).
+
+1. Carga y Definición de Variables
+Carga del Dataset: El archivo parkinsons_updrs.csv es cargado.
+
+Definición de Características (X): Se seleccionan las métricas de voz, excluyendo columnas de identificación, tiempo y los targets UPDRS de severidad.
+
+Definición de la Etiqueta (Y): Se crea la etiqueta binaria (0/1) para clasificación. Esta etiqueta indica si la severidad total del Parkinson está por encima o por debajo de la mediana del dataset.
+
+2. Determinación de K Óptima
+Método del Codo: Se ejecuta el algoritmo K-Means para un rango de K (generalmente 1 a 14). Se calcula la Inercia (una medida de la compacidad de los clusters).
+
+Resultado: Se identifica el punto de inflexión ("codo"), que establece K=4 como el número óptimo de clusters para la exploración.
+
+3. Técnicas de Exploración
+K-Means (K=4): Se entrena con el K óptimo. Se usa PCA para reducir las dimensiones y graficar los 4 grupos principales y sus centroides.
+
+DBSCAN: Se aplica la agrupación por densidad. El objetivo principal es identificar puntos de ruido u outliers, que son etiquetados como -1.
+
+Gaussian Mixtures (GMM): Modela los K=4 clusters como distribuciones probabilísticas (elipses), ofreciendo una perspectiva diferente a la forma esférica asumida por K-Means.
+
+
+------------------------------------------------------
+
+
+PUNTO 2: Aprendizaje Semi-Supervisado y Activo (K=50)
+Esta fase aplica el clustering de manera estratégica para mejorar la precisión de la clasificación con un costo de etiquetado mínimo.
+
+1. Preparación de Subsets
+División (80/20): Los datos se dividen en conjuntos de Entrenamiento y Prueba.
+
+Escalado: Se utiliza StandardScaler para normalizar los datos. Esta regla se aprende solo en el set de entrenamiento y se aplica al set de prueba, lo cual previene la fuga de datos (data leakage).
+
+2. Generación y Propagación de Etiquetas
+K-Means Prototipos (K=50): Se entrena K-Means para identificar 50 prototipos. Estos son 50 puntos clave que representan todo el espacio de características.
+
+Obtención de Etiquetas Humanas: Se obtienen las etiquetas verdaderas (de y_train) solo para esas 50 muestras prototipo.
+
+Propagación de Etiquetas: La etiqueta verdadera de cada prototipo se asigna a todos los demás puntos que pertenecen a ese cluster. El resultado es el target completo auto-etiquetado (y_prop).
+
+3. Aprendizaje Activo (Active Learning) y Evaluación
+Entrenamiento Base: Un clasificador (Regresión Logística) se entrena usando el target auto-etiquetado (y_prop). Esto establece la precisión inicial (score_prop).
+
+Identificación de Incertidumbre: El modelo calcula las probabilidades de predicción y selecciona los 10 puntos con la menor confianza (los más inciertos). Este es el paso clave de la estrategia Activa.
+
+Corrección Estratégica: Las 10 etiquetas inseguras se corrigen manualmente con sus etiquetas verdaderas (y_true).
+
+Reentrenamiento y Evaluación: El modelo se reentrena con las 10 correcciones estratégicas. La mejora de precisión (score_active) final demuestra la eficiencia del Aprendizaje Activo al haber gastado solo 10 etiquetas de forma inteligente.
+
+
+------------------------------------------------------
+
+
