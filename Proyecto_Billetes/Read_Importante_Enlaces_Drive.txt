@@ -1,4 +1,5 @@
 Se suben archivos como los modelos entrenados y dataset a Drive porque tienen un peso mayor a 25 MB.
+
 -- el archivo que ejecuta o leva a cabo todo el proceso de la clasificaion tiene nombre de: identificador.ipynb
 se encuentra dentro del directorio principal
 
