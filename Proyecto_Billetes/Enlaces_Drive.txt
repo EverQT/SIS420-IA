@@ -1,5 +1,5 @@
 Se suben archivos como los modelos entrenados y dataset a Drive porque tienen un peso mayor a 25 MB.
--- proyecto completo se encuentra en Drive
+-- proyecto completo se encuentra en Drive, tambien esta la estructura correcta del proyecto para que funcione correctamente, es decir donde debe de ir cada archivo
 https://drive.google.com/drive/folders/1HyTWbynJnMSs9PHzPnYq1UkGEGDpgEw6?usp=sharing
 
 si se quiere seguir con GitHub debe de descargar los complementos
