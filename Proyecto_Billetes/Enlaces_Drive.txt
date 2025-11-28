@@ -10,5 +10,13 @@ https://drive.google.com/file/d/1YYBnaL8IaVAhC_G4SJAmGYc2jXgIRqjO/view?usp=shari
 -- modelo Yolo entrenado para la deteccion de billetes
 https://drive.google.com/file/d/1EUC99VX1S1FWvD1Gu_PWViwbbxlAgRin/view?usp=sharing
 
+los archivos mas importantes a ver son:
+-- dataset
+-- modelo entrenado yolov8
+-- modelo de clasificacion de billetes
+
+sigua de como se utilizo el entrenamiento Yolo
+-- https://youtu.be/r0RspiLG260?si=8JGq-94bAlxz3U3I
+
 
 
