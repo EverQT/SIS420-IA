@@ -1,1 +1,1 @@
-hola
+Se suben archivos como los modelos entrenados y dataset a Drive porque tienen un peso mayor a 25 MB
