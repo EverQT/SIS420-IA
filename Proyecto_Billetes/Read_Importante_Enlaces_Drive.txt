@@ -7,10 +7,13 @@ se encuentra dentro del directorio principal
 https://drive.google.com/drive/folders/1HyTWbynJnMSs9PHzPnYq1UkGEGDpgEw6?usp=sharing
 
 si se quiere seguir con GitHub debe de descargar los complementos
+
 -- Dataset utilizado para el modelos de Clasificacion
 https://drive.google.com/file/d/1PY80a4Se3sQ6iXHvxxuZvE3qlqKbxQB1/view?usp=sharing
+
 -- modelos entrenado para pclasificar los billetes Modelo_Clasificacion
 https://drive.google.com/file/d/1YYBnaL8IaVAhC_G4SJAmGYc2jXgIRqjO/view?usp=sharing
+
 -- modelo Yolo entrenado para la deteccion de billetes
 https://drive.google.com/file/d/1EUC99VX1S1FWvD1Gu_PWViwbbxlAgRin/view?usp=sharing
 
