@@ -1,7 +1,13 @@
 Se suben archivos como los modelos entrenados y dataset a Drive porque tienen un peso mayor a 25 MB.
 
+-- Drive
+https://drive.google.com/drive/folders/1HyTWbynJnMSs9PHzPnYq1UkGEGDpgEw6?usp=sharing
+
+-- GitHub
+https://github.com/EverQT/SIS420-IA/tree/main/Proyecto_Billetes
+
 -- el archivo que ejecuta o leva a cabo todo el proceso de la clasificaion tiene nombre de: identificador.ipynb
-se encuentra dentro del directorio principal
+se encuentra dentro del directorio principal, es el que lleva hace funcionar todo proyecto
 
 -- proyecto completo se encuentra en Drive, tambien esta la estructura correcta del proyecto para que funcione correctamente, es decir donde debe de ir cada archivo
 https://drive.google.com/drive/folders/1HyTWbynJnMSs9PHzPnYq1UkGEGDpgEw6?usp=sharing
@@ -11,7 +17,7 @@ si se quiere seguir con GitHub debe de descargar los complementos
 -- Dataset utilizado para el modelos de Clasificacion
 https://drive.google.com/file/d/1PY80a4Se3sQ6iXHvxxuZvE3qlqKbxQB1/view?usp=sharing
 
--- modelos entrenado para pclasificar los billetes Modelo_Clasificacion
+-- modelos entrenado para clasificar los billetes Modelo_Clasificacion
 https://drive.google.com/file/d/1YYBnaL8IaVAhC_G4SJAmGYc2jXgIRqjO/view?usp=sharing
 
 -- modelo Yolo entrenado para la deteccion de billetes
@@ -22,9 +28,9 @@ los archivos mas importantes a ver son:
 -- modelo entrenado yolov8
 -- modelo de clasificacion de billetes
 
--- sigua de como se utilizo el entrenamiento Yolo
+-- guia de como se utilizo el entrenamiento Yolo
 https://youtu.be/r0RspiLG260?si=8JGq-94bAlxz3U3I
--- el cuadernillo utililizado
+-- cuadernillo entrenado
 https://drive.google.com/file/d/1EOYVpCU2Gvy6mNMk4Q20oXLNoLaj4amk/view?usp=sharing
 
 
