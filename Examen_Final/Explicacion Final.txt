@@ -1,0 +1,64 @@
+1. Generar las imágenes se las redimenciona a 500x500 ya no a 64x64
+
+====================================
+1. Crear el dataset selo adecua para que sea 500 x 500 x 3 = 750000 + 1 label
+
+====================================
+para la red neuronal se cambio
+
+model = nn.Sequential(
+    nn.Linear(750000, 4096),  # Capa 1: reducción fuerte
+    nn.ReLU(),
+    nn.Linear(4096, 2048),    # Capa 2
+    nn.ReLU(),
+    nn.Linear(2048, 1024),    # Capa 3
+    nn.ReLU(),
+    nn.Linear(1024, 512),     # Capa 4
+    nn.ReLU(),
+    nn.Linear(512, 256),      # Capa 5
+    nn.ReLU(),
+    nn.Linear(256, 128),      # Capa 6
+    nn.ReLU(),
+    nn.Linear(128, 64),       # Capa 7
+    nn.ReLU(),
+    nn.Linear(64, output_size) # Capa de salida
+).to(torch.device("cpu"))
+
+
+====================================
+1. Dimensionalidad del Dataset
+Dataset original (64×64×3):
+
+Cada imagen tiene 12,288 píxeles + 1 etiqueta.
+
+Representación compacta, manejable en memoria y entrenamiento.
+
+Dataset escalado (500×500×3):
+
+Cada imagen tiene 750,000 píxeles + 1 etiqueta.
+
+Incremento de ~61 veces más características por muestra.
+
+Esto significa que el modelo debe procesar 61 veces más información por cada imagen, lo que impacta directamente en memoria, tiempo de entrenamiento y riesgo de sobreajuste.
+
+====================================
+2. Impacto en la Red Neuronal (MLP)
+Caso 64×64×3 (12,288 entradas)
+Ejemplo de arquitectura:
+
+Entrada: 12,288
+
+Primera capa oculta: 8192 neuronas
+
+Parámetros ≈ 100 millones (12,288 × 8192 + bias)
+
+Caso 500×500×3 (750,000 entradas)
+Ejemplo de arquitectura similar:
+
+Entrada: 750,000
+
+Primera capa oculta: 8192 neuronas
+
+Parámetros ≈ 6,144 millones (750,000 × 8192 + bias)
+
+Conclusión: El salto de 12k → 750k entradas multiplica los parámetros de la primera capa por ~61 veces, volviendo el modelo inmanejable en hardware convencional.
